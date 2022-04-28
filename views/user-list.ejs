@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<%- include('layouts/header'); -%>
+
+  <body>
+    <%- include('layouts/navbar'); -%>
+
+      <header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="page-heading">
+                <h1>MINDX</h1>
+                <span class="subheading"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <div class="leaderboard">
+          <div class="head">
+            <i class="fas fa-crown"></i>
+            <h1>User List</h1>
+          </div>
+          <div class="body">
+            <ol>
+              <% if(users == null){ %>
+                <li>No user found</li>
+              <% } else{ %>  
+                <% users.forEach(({ _id, name, email })=> { %>
+                  <li>
+                    <mark><%= name %></mark>
+                    <small><%= email %></small>
+                  </li>
+                  <% }) %>
+              <% } %>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <%- include('layouts/footer'); -%>
+        <%- include('layouts/scripts'); -%>
+  </body>
+
+</html>

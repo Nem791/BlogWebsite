@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<%- include('layouts/header'); -%>
+
+  <body>
+    <%- include('layouts/navbar'); -%>
+
+      <header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="page-heading">
+                <h1>MINDX</h1>
+                <span class="subheading"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <% post.forEach(({ image, title, datePosted, body })=> { %>
+          <div class="d-flex flex-column">
+            <img src="<%= image %>" alt="">
+            <div class="body-container">
+              <h5><%= title %></h5>
+              <h6><%= datePosted %></h6>
+              <p><%= body %></p>
+
+            </div>
+          </div>
+        <% }) %>
+      </div>
+      <%- include('layouts/footer'); -%>
+        <%- include('layouts/scripts'); -%>
+  </body>
+
+</html>
