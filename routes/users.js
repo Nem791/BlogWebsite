@@ -5,29 +5,12 @@ const { registerValidation, loginValidation } = require('../auth/validation');
 const jwt = require('jsonwebtoken');
 const User = require('../models/Users');
 const checkToken = require('../auth/checkToken');
+const { getUsers, getUserById } = require('../controller/userController');
 
 /* GET users listing. */
-router.get("/", async (req, res, next) => {
-  const users = await User.find();
-  console.log(users);
-  return res.render("user-list", {
-    users
-  });
-});
+router.get("/", getUsers);
 
-router.get("/:id", checkToken, async (req, res, next) => {
-  // const users = await User.find();
-  // const users1 = await User.findById(req.params.id).catch((err) => {
-  //   console.log(err);
-  // });
-  const users = await User.find({_id: req.params.id}).catch((err) => {
-      return null;
-    });
-  // console.log(users1);
-  return res.render("user-list", {
-    users
-  });
-});
+router.get("/:id", checkToken, getUserById);
 
 router.post('/register', async function (req, res, next) {
   // validate info of user

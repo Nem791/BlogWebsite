@@ -22,5 +22,17 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nem791/BlogWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nem791/BlogWebsite/issues"
+  },
+  "homepage": "https://github.com/Nem791/BlogWebsite#readme",
+  "description": ""
 }
