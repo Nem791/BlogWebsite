@@ -34,7 +34,7 @@
       </div>
 
       <div class="card-deck">
-        <% posts.forEach(({ image, title, datePosted, excerpt })=> { %>
+        <% posts.forEach(({ _id, image, title, datePosted, excerpt, user })=> { %>
           <!-- <div class="d-flex flex-column">
             <img src="<%= image %>" alt="">
             <div class="body-container">
@@ -44,7 +44,7 @@
 
             </div>
           </div> -->
-          <div class="card">
+          <div id="<%= _id %>" class="card">
             <img class="card-img-top" src="<%= image %>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">
@@ -54,7 +54,13 @@
             </div>
             <div class="card-footer">
               <small class="text-muted">
-                <%= datePosted %>
+                <div class="d-flex align-items-center">
+                  <img class="card-user-avatar" src="<%= user.profilePicture %>" alt="">
+                  <span class="pl-1">
+                    <%= user.name %>
+                  </span>
+                </div>
+                <div>Date Posted: <%= datePosted %></div>
               </small>
             </div>
           </div>

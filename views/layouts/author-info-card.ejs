@@ -1,10 +1,10 @@
 <div class="card-right-body">
     <div class="card-rb-1">
-        <img src="https://rvs-article-preview-component.netlify.app/images/avatar-michelle.jpg" alt="">
+        <img src="<%= post.user.profilePicture %>" alt="">
     </div>
     <div class="card-rb-2">
-        <div class="card-rb-2-title fw-7">Michelle Appleton</div>
-        <div class="card-rb-2-text fw-5">28 Jun 2020</div>
+        <div class="card-rb-2-title fw-7"><%= post.user.name %></div>
+        <div class="card-rb-2-text fw-5"><%= post.datePosted %></div>
     </div>
     <div class="card-rb-3">
         <div class="card-rb-3-inner"></div>

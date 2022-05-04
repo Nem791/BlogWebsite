@@ -516,6 +516,8 @@ ol {
 	padding: 20px;
 	margin-top: 15px !important;
 	margin-bottom: 15px !important;
+	transition: 0.3s;
+	cursor: pointer;
 }
 
 .card-deck {
@@ -535,6 +537,17 @@ ol {
 	padding-left: 25px;
 }
 
+.card-user-avatar {
+	width: 30px;
+	border-radius: 50%;
+}
+
+.card:hover {
+	transform: scale(1.01);
+	transition: 0.3s;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 @media screen and (max-width: 1200px) {
 	.card-deck {
 		grid-template-columns: repeat(2, 1fr);
@@ -544,5 +557,8 @@ ol {
 @media screen and (max-width: 600px) {
 	.card-deck {
 		grid-template-columns: repeat(1, 1fr);
+	}
+	.pagination {
+		font-size: 14px;
 	}
 }

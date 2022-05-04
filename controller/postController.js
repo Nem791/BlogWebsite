@@ -1,6 +1,7 @@
 const BlogPost = require("../models/BlogPost");
 const { default: mongoose } = require('mongoose');
 var path = require('path');
+const convertToSlug = require("../utils/convertSlug");
 
 const getPosts = async (req, res) => {
     // const users = await BlogPost.find({}, (err, post) => {
@@ -12,6 +13,9 @@ const getPosts = async (req, res) => {
     //         return res.render("index", { post, username: username });
     //     }
     // }).clone();
+    // const keyword = req.query.keyword ? { name: { $regex: req.query.keyword } } : {deleted: false};
+    // const countProducts = await Product.countDocuments({ ...keyword });
+    // const products = await Product.find({ ...keyword }).limit(pageSize).skip(pageSize * (page - 1));
 
     let username = (req.user !== undefined) ? req.user.name : undefined;
 
@@ -21,20 +25,22 @@ const getPosts = async (req, res) => {
     // Ko co params => mac dinh se sort theo title 
     const sortParams = req.query.sortBy === undefined ? 'title' : req.query.sortBy;
     console.log('sortParams: ', sortParams);
-    // const keyword = req.query.keyword ? { name: { $regex: req.query.keyword } } : {deleted: false};
-    // const countProducts = await Product.countDocuments({ ...keyword });
-    // const products = await Product.find({ ...keyword }).limit(pageSize).skip(pageSize * (page - 1));
 
-    const pages = await BlogPost.countDocuments();
-    let noOfPages = Math.ceil(pages / pageSize);
+    try {
+        const pages = await BlogPost.countDocuments();
+        let noOfPages = Math.ceil(pages / pageSize);
 
-    // Aggregate 3 pipeline
-    const posts = await BlogPost.aggregate().sort(`${sortParams}`).skip(pageSize * (page - 1)).limit(pageSize);
-    // Join User vs BlogPost 
-    await BlogPost.populate(posts, {path: "username"});
-    console.log(posts[0].username.name);
+        // Aggregate 3 pipeline
+        const posts = await BlogPost.aggregate().sort(`${sortParams}`).skip(pageSize * (page - 1)).limit(pageSize);
+        // Join User vs BlogPost 
+        await BlogPost.populate(posts, { path: "user" });
+        console.log(posts[0]);
 
-    return res.render("index", { posts, username, noOfPages, current: page });
+        return res.render("index", { posts, username, noOfPages, current: page });
+    } catch (error) {
+        console.log(error);
+        return res.json({ error: String(error) });
+    }
 };
 
 const test = async (req, res) => {
@@ -51,9 +57,28 @@ const test = async (req, res) => {
 };
 
 // Lay post theo ID 
-const getPostById = (req, res) => {
+const getPostById = async (req, res) => {
     let username = (req.user !== undefined) ? req.user.name : undefined;
-    res.render('landing-page', { username: username });
+
+    try {
+        console.log(req.params.id);
+        // get ID
+        const slug = req.params.id.split('-').pop();
+
+        // Tim post theo ID 
+        const post = await BlogPost.findById(slug);
+        console.log(post);
+
+        // Join User vs BlogPost 
+        await BlogPost.populate(post, { path: "user" });
+
+        return res.render('landing-page', { username, post });
+
+    } catch (error) {
+        console.log(error);
+        res.json({error});
+    }
+
 };
 
 const newPost = (req, res) => {
@@ -70,7 +95,7 @@ const savePost = (req, res) => {
         BlogPost.create({
             ...req.body,
             image: '/upload/' + image.name,
-            username: mongoose.Types.ObjectId(req.user._id)
+            user: mongoose.Types.ObjectId(req.user._id)
         }, function (err) {
             res.redirect('/');
         })

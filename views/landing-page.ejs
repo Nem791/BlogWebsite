@@ -23,23 +23,17 @@
         <header class="header">
           <p class="subheading">Subheading for the Page</p>
           <%- include('layouts/author-info-card'); -%>
-          <h1 class="heading">Main Header of the Page</h1>
+          <h1 class="heading"><%= post.title %></h1>
         </header>
         <section class="content">
           <div class="image-container">
-            <img src='https://cpwebassets.codepen.io/assets/packs/editor-embed-eae2ee445ef0f63ee8fc7f175858e9d9.png' alt='large-image'
+            <img src='<%= post.image %>' alt='large-image'
               class="poster-image">
           </div>
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cum aperiam ex, recusandae non qui tempore.
-            Quisquam, cupiditate! In suscipit tenetur sit beatae inventore aliquid fugit expedita quis totam. Pariatur?
+          <p><%= post.excerpt %>
           </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cum aperiam ex, recusandae non qui tempore.
-            Quisquam, cupiditate! In suscipit tenetur sit beatae inventore aliquid fugit expedita quis totam. Pariatur?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cum aperiam ex, recusandae non qui tempore.
-            Quisquam, cupiditate! In suscipit tenetur sit beatae inventore aliquid fugit expedita quis totam. Pariatur?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cum aperiam ex, recusandae non qui tempore.
-            Quisquam, cupiditate! In suscipit tenetur sit beatae inventore aliquid fugit expedita quis totam. Pariatur?
+          <p><%= post.content %>
           </p>
           <p>Velit scelerisque in dictum non consectetur. Potenti nullam ac tortor vitae purus faucibus ornare
             suspendisse sed. Interdum velit euismod in pellentesque massa. Amet porttitor eget dolor morbi non.
