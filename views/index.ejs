@@ -18,19 +18,148 @@
           </div>
         </div>
       </header>
-      <div class="container">
-        <% post.forEach(({ image, title, datePosted, body })=> { %>
-          <div class="d-flex flex-column">
+
+      <div class="btn-group sort-dropdown" role="group" aria-label="Button group with nested dropdown">
+
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Sort by
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="/<%= current %>?sortBy=title">Alphabetical</a>
+            <a class="dropdown-item" href="/<%= current %>?sortBy=datePosted">Time Created</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-deck">
+        <% posts.forEach(({ image, title, datePosted, excerpt })=> { %>
+          <!-- <div class="d-flex flex-column">
             <img src="<%= image %>" alt="">
             <div class="body-container">
               <h5><%= title %></h5>
               <h6><%= datePosted %></h6>
-              <p><%= body %></p>
+              <p><%= excerpt %></p>
 
             </div>
+          </div> -->
+          <div class="card">
+            <img class="card-img-top" src="<%= image %>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= title %>
+              </h5>
+              <p class="card-text"><%= excerpt %></p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">
+                <%= datePosted %>
+              </small>
+            </div>
           </div>
-        <% }) %>
+          <% }) %>
+          
       </div>
+
+      <nav class="border-end" aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          
+
+          <% if(current == 1) { %> 
+            <!-- Nếu thông số http://localhost:3333/1/ là 1 thì First sẽ bị disabled -->
+            <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+          <% } else { %>
+            <!-- Nếu thông số http://localhost:3333/2/ từ 2 trở lên thì First sẽ bỏ disabled -->
+            <li class="page-item">
+            <a class="page-link" onclick="event.preventDefault() ;window.location='/<%= (Number(current) - 1) %>' + window.location.search;" href="#" tabindex="-1">Previous</a>
+            </li>
+          <% } %>
+
+          <!-- FIRST ITEM -->  
+          <% if(current == 1) { %> 
+          <!-- // Nếu thông số http://localhost:3333/1/ là 1 thì First sẽ bị disabled -->
+                <li class="page-item disabled">
+                  <a class="page-link" href="/1">First</a>
+                </li>
+          <% } else { %>
+            <!-- // Nếu thông số http://localhost:3333/2/ từ 2 trở lên thì First sẽ bỏ disabled -->
+                <li class="page-item">
+                  <a class="page-link" onclick="event.preventDefault(); window.location='/1' + window.location.search;" href="#">First</a>
+                </li>
+          <% } %>
+          
+          <!-- <% for (let i = 1; i <= noOfPages;  i++ ) { %>
+
+            <li class="page-item"><a class="page-link" href=""><%= i %> </a></li>
+          <% } %> -->
+
+          <!-- ITEMS  -->
+          <% var i = (Number(current) > 3 ? Number(current) - 2 : 1) %> 
+          <!-- // Toán tử điều kiện 3 ngôi syntax: < điều_kiện ? giá_trị_1 : giá_trị_2 >
+          // Nếu điều_kiện trả về true, toán tử có giá trị giá_trị_1. Ngược lại toán tử có giá trị giá_trị_2. -->
+          <% if(i !== 1) { %>
+            <li class="page-item disabled">
+              <a class="page-link" href="#">...</a>
+            </li>
+          <% } %>
+          <% for(; i <= (Number(current) + 2) && i <= noOfPages; i++) { %>
+          <!-- // Sử dụng vòng lặp để lặp qua từng trang và tăng số trang 
+          // Trong vòng lặp for có ba biểu thức tùy chọn nên chỉ cần tách mỗi biểu thức bằng dấu `;` là oke rồi -->
+            <% if(i == current) { %>
+              <li class="page-item active">
+                <a class="page-link" onclick="event.preventDefault(); window.location='/<%= i %>' + window.location.search;" href="#">
+                  <%= i %>
+                </a>
+              </li>
+            <% } else { %>
+              <li class="page-item">
+                <a class="page-link" onclick="event.preventDefault(); window.location='/<%= i %>' + window.location.search;" href="#">
+                  <%= i %>
+                </a>
+              </li>
+            <% } %>
+
+            <% if (i == Number(current) + 2 && i < noOfPages) { %>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">...</a>
+              </li>
+            <% } %>
+          <% } %>
+          
+          <!-- LAST ITEM -->
+          <% if(current === noOfPages) { %> 
+          <!-- // Nếu số current( chỉ số phân trang ) là 6 và tổng số page là 6 thì Last bị disabled -->
+               <li class="page-item disabled">
+                 <a class="page-link" onclick="event.preventDefault(); window.location='/<%= noOfPages %>' + window.location.search;" href="#">
+                   Last
+                 </a>
+               </li>
+          <% } else { %>
+           <!-- // Ngược lại, thì Last là trang cuối cùng pages ở đây là 6 đồng nghĩa với Last là trang số 6 -->
+               <li class="page-item">
+                 <a class="page-link" onclick="event.preventDefault(); window.location='/<%= noOfPages %>' + window.location.search;" href="#">
+                   Last
+                 </a>
+               </li>
+          <% } %>
+
+          <% if(current === noOfPages) { %> 
+            <!-- Nếu thông số http://localhost:3333/news/1/ là 1 thì First sẽ bị disabled -->
+            <li class="page-item disabled">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          <% } else { %>
+            <!-- Nếu thông số http://localhost:3333/news/2/ từ 2 trở lên thì First sẽ bỏ disabled -->
+            <li class="page-item">
+              <a class="page-link" onclick="event.preventDefault(); window.location='/<%= (Number(current) + 1) %>' + window.location.search;" href="#">Next</a>
+            </li>
+          <% } %>
+          
+        </ul>
+      </nav>
       <%- include('layouts/footer'); -%>
         <%- include('layouts/scripts'); -%>
   </body>

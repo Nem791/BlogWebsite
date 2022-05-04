@@ -15,6 +15,11 @@ const UserSchema = new Schema({
     email: {
         type: String,
         required: true
+    },
+    profilePicture: {
+        type: String,
+        required: true,
+        default: 'https://construct-static.com/images/v1007/r/uploads/tutorial/0/images/17449/windows-8-user-account_v650.jpg'
     }
 
 });

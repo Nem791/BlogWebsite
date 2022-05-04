@@ -1,0 +1,89 @@
+.card-right-body {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.card-right-body .card-rb-1 {
+    /* flex-grow: 1; */
+}
+
+.card-rb-1 img {
+    width: 45px;
+    border-radius: 50%;
+}
+
+.card .card-right .card-right-body .card-rb-2 {
+    flex-grow: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 3px;
+}
+
+.card-right-body .card-rb-2 .card-rb-2-title {
+    color: hsl(214, 17%, 51%);
+}
+
+.card-right-body .card-rb-2 .card-rb-2-text {
+    color: hsl(212, 23%, 69%);
+}
+
+.card-right-body .card-rb-3 {
+    /* flex-grow: 1; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-right-body .card-rb-3 .card-rb-3-inner {
+    background: url(https://rvs-article-preview-component.netlify.app/images/icon-share.svg) hsl(210, 46%, 95%);
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.card-rb-3-inner:hover {
+    background-color: darkgrey !important;
+}
+
+.card-rb-2, .card-rb-3 {
+    margin-left: 40px;
+}
+
+@media only screen and (max-width: 450px) {
+    .card-right-body {
+        display: grid;
+        /* align-items: center; */
+        /* margin-bottom: 25px; */
+        grid-template-columns: auto;
+        align-items: center;
+        gap: 8px;
+        /* justify-content: center; */
+        place-items: self-start;
+    }
+
+    .card-rb-2, .card-rb-3 {
+        margin-left: initial;
+    }
+
+    .card-right-body .card-rb-2 .card-rb-2-title {
+        color: hsl(214, 17%, 51%);
+        font-size: small;
+    }
+
+    .card-right-body .card-rb-2 .card-rb-2-text {
+        color: hsl(212, 23%, 69%);
+        font-size: small;
+    }
+
+    .before-1 {
+        font-size: small;
+    }
+  }

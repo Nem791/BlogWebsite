@@ -16,7 +16,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/posts/new">New Post</a>
         </li>
-        <% if(typeof username === 'undefined' || username === null){ %>
+        <% if(typeof username === 'undefined' || username.name === null || username === undefined){ %>
           <li class="nav-item">
             <a class="nav-link" href="/auth/login">Login</a>
           </li>
