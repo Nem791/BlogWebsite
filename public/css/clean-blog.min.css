@@ -548,9 +548,33 @@ ol {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+ul > .nav-item {
+	display: flex;
+	align-items: center;
+}
+
+ul > .nav-item > a {
+	display: flex;
+	align-items: center;
+	font-size: 14px !important;
+	letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+	font-weight: 800 !important;
+}
+
+#dropdownMenu2 {
+	color: white;
+}
+
 @media screen and (max-width: 1200px) {
 	.card-deck {
 		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#dropdownMenu2 {
+		color: rgba(0,0,0,.5) !important;
 	}
 }
 

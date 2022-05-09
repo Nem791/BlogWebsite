@@ -1,4 +1,3 @@
-const BlogPost = require("../models/BlogPost");
 const { default: mongoose } = require('mongoose');
 const User = require("../models/Users");
 const { registerValidation, loginValidation } = require('../auth/validation');
@@ -9,7 +8,7 @@ const getUsers = async (req, res) => {
     const users = await User.find();
     console.log(users);
 
-    let username = (req.user !== undefined) ? req.user.name : undefined;
+    let username = (req.user !== undefined) ? req.user : undefined;
 
     return res.render("user-list", {
         users, username
@@ -25,7 +24,7 @@ const getUserById = async (req, res) => {
         return null;
     });
 
-    let username = (req.user !== undefined) ? req.user.name : undefined;
+    let username = (req.user !== undefined) ? req.user : undefined;
 
     // console.log(users1);
     return res.render("user-list", {
@@ -116,9 +115,39 @@ const loginUser = async (req, res, next) => {
     // res.status(204).send();
 }
 
+const logOutUser = async (req, res) => {
+    req.session.destroy(function (err) {
+        if (err) {
+            return next(err);
+        } else {
+            return res.redirect('/');
+        }
+    });
+};
+
+const userProfile = async (req, res) => {
+    let username = (req.user !== undefined) ? req.user : undefined;
+
+    console.log(req.params.id);
+    // get ID
+    const slug = req.params.id.split('-').pop();
+    console.log(slug);
+
+    // Tim post theo ID 
+    const user = await User.findById(slug);
+    console.log('user: '. user);
+    console.log('username: '. username);
+
+    return res.render("profile", {
+        username, user
+    });
+};
+
 module.exports = {
     getUsers,
     getUserById,
     registerUser,
-    loginUser
+    loginUser,
+    logOutUser,
+    userProfile
 }

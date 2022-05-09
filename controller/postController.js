@@ -17,7 +17,7 @@ const getPosts = async (req, res) => {
     // const countProducts = await Product.countDocuments({ ...keyword });
     // const products = await Product.find({ ...keyword }).limit(pageSize).skip(pageSize * (page - 1));
 
-    let username = (req.user !== undefined) ? req.user.name : undefined;
+    let username = (req.user !== undefined) ? req.user : undefined;
 
     const pageSize = 6;
     const page = Number(req.params.pageNumber) || 1;
@@ -67,7 +67,7 @@ const getPostById = async (req, res) => {
 
         // Tim post theo ID 
         const post = await BlogPost.findById(slug);
-        console.log(post);
+        console.log('post: ', post);
 
         // Join User vs BlogPost 
         await BlogPost.populate(post, { path: "user" });
@@ -100,6 +100,10 @@ const savePost = (req, res) => {
             res.redirect('/');
         })
     });
+};
+
+const recommendArticle = (req, res) => {
+    // Later
 };
 
 module.exports = {

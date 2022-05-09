@@ -25,8 +25,19 @@
           </li>
         <% } else{ %>  
           <li class="nav-item">
-            <a class="nav-link" href="#"><%= username %></a>
+            <div id="<%= username._id %>" class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= username.name %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button id="profile-btn" class="dropdown-item" type="button">Profile</button>
+                <button class="dropdown-item" type="button">Posts List</button>
+                <div class="dropdown-divider"></div>
+                <a href="/users/session/logout" class="dropdown-item" type="button">Log Out</a>
+              </div>
+            </div>
           </li>
+          
         <% } %>
         
       </ul>
