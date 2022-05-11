@@ -24,7 +24,7 @@ const getPosts = async (req, res) => {
 
     // Ko co params => mac dinh se sort theo title 
     const sortParams = req.query.sortBy === undefined ? 'title' : req.query.sortBy;
-    console.log('sortParams: ', sortParams);
+    console.log('sortParams11: ', sortParams);
 
     try {
         const pages = await BlogPost.countDocuments();
@@ -34,8 +34,7 @@ const getPosts = async (req, res) => {
         const posts = await BlogPost.aggregate().sort(`${sortParams}`).skip(pageSize * (page - 1)).limit(pageSize);
         // Join User vs BlogPost 
         await BlogPost.populate(posts, { path: "user" });
-        console.log(posts[0]);
-
+        console.log('lol');
         return res.render("index", { posts, username, noOfPages, current: page });
     } catch (error) {
         console.log(error);
@@ -58,7 +57,7 @@ const test = async (req, res) => {
 
 // Lay post theo ID 
 const getPostById = async (req, res) => {
-    let username = (req.user !== undefined) ? req.user.name : undefined;
+    let username = (req.user !== undefined) ? req.user : undefined;
 
     try {
         console.log(req.params.id);
@@ -82,7 +81,7 @@ const getPostById = async (req, res) => {
 };
 
 const newPost = (req, res) => {
-    let username = (req.user !== undefined) ? req.user.name : undefined;
+    let username = (req.user !== undefined) ? req.user : undefined;
     res.render('create', { username: username });
 };
 
@@ -103,8 +102,8 @@ const savePost = (req, res) => {
 };
 
 const recommendArticle = (req, res) => {
-    // Later
-};
+    const posts = BlogPost.aggregate();
+}
 
 module.exports = {
     getPosts,

@@ -135,8 +135,8 @@ const userProfile = async (req, res) => {
 
     // Tim post theo ID 
     const user = await User.findById(slug);
-    console.log('user: '. user);
-    console.log('username: '. username);
+    console.log('user: ', user);
+    console.log('username: ', username);
 
     return res.render("profile", {
         username, user

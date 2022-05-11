@@ -9,6 +9,6 @@ router.get('/', checkToken, getPosts);
 
 router.get('/test', test);
 
-router.get('/:pageNumber', checkToken, getPosts);
+router.get('/home/:pageNumber', checkToken, getPosts);
 
 module.exports = router;

@@ -45,9 +45,6 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 
-// Trang home 
-// Get thong tin cac bai post
-app.use('/', indexRouter); // Trang home
 
 // Trang POSTS 
 // Tao moi 1 bai POST 
@@ -60,6 +57,10 @@ app.use('/users', usersRouter);
 // Trang login 
 // Dang ky moi 1 user 
 app.use('/auth', authRouter);
+
+// Trang home 
+// Get thong tin cac bai post
+app.use('/', indexRouter); // Trang home
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
