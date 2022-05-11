@@ -434,6 +434,22 @@ img {
 	width: 100%;
 }
 
+.custom-control-label {
+	opacity: 1 !important;
+}
+
+.position-initial {
+	position: initial !important;
+	opacity: 1 !important;
+	padding-left: 10px;
+}
+
+.checkbox-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+}
+
 /* leaderboard */
 .leaderboard {
 	background: linear-gradient(to bottom, #3a404d, #181c26);
@@ -626,6 +642,12 @@ ul>.nav-item>a {
 @media screen and (max-width: 600px) {
 	.card-deck {
 		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.checkbox-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
 	}
 
 	.pagination {
