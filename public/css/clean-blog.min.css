@@ -627,6 +627,15 @@ ul>.nav-item>a {
 	color: white;
 }
 
+.control-group {
+	margin-top: 10px;
+}
+
+.err-message {
+	color: red;
+	font-size: smaller;
+}
+
 @media screen and (max-width: 1200px) {
 	.card-deck {
 		grid-template-columns: repeat(2, 1fr);

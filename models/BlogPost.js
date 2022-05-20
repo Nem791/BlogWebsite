@@ -26,7 +26,12 @@ const BlogPostSchema = new Schema({
     image: {
         type: String,
         required: true
+    },
+    category: {
+        type: Array,
+        required: true
     }
+
 });
 
 const BlogPost = mongoose.model('BlogPost', BlogPostSchema);

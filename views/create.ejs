@@ -33,6 +33,7 @@
                   <label>Title</label>
                   <input type="text" class="form-control" placeholder="Title" id="title" name="title">
                 </div>
+                <span hidden class="err-message">Field cannot be empty</span>
               </div>
               <!-- Excerpt = Trich van  -->
               <div class="control-group">
@@ -40,6 +41,7 @@
                   <label>Excerpt</label>
                   <input type="text" class="form-control" placeholder="Excerpt" id="excerpt" name="excerpt">
                 </div>
+                <span hidden class="err-message">Field cannot be empty</span>
               </div>
               <!-- Content -->
               <div class="control-group">
@@ -47,6 +49,7 @@
                   <label>Content</label>
                   <textarea rows="5" class="form-control" placeholder="Content" id="content" name="content"></textarea>
                 </div>
+                <span hidden class="err-message">Field cannot be empty</span>
               </div>
 
               <div class="control-group">
@@ -54,6 +57,8 @@
                   <div>Category</div>
 
                   <div class="checkbox-container">
+                    <input id="checkbox-array" type="hidden" name="category">
+
                     <div class="input-group-text">
                       <input id="Technology" type="checkbox" aria-label="Checkbox for following text input"
                         name="technology">
@@ -61,7 +66,8 @@
                     </div>
 
                     <div class="input-group-text">
-                      <input id="Economy" type="checkbox" aria-label="Checkbox for following text input" name="economy">
+                      <input id="Economy" type="checkbox" aria-label="Checkbox for following text input"
+                        name="economy">
                       <label class="position-initial" for="Economy">Economy</label>
                     </div>
 
@@ -74,6 +80,11 @@
                       <input id="Travel" type="checkbox" aria-label="Checkbox for following text input" name="travel">
                       <label class="position-initial" for="Travel">Travel</label>
                     </div>
+
+                    <div class="input-group-text">
+                      <input id="Other" type="checkbox" aria-label="Checkbox for following text input" name="other">
+                      <label class="position-initial" for="Other">Other</label>
+                    </div>
                   </div>
 
                 </div>
@@ -84,6 +95,7 @@
                   <label>Image</label>
                   <input type="file" class="form-control" id="image" name="image">
                 </div>
+                <span hidden class="err-message">Select image for post</span>
               </div>
               <br>
               <div class="form-group">
@@ -97,8 +109,7 @@
       <hr>
       <%- include('layouts/footer'); -%>
         <%- include('layouts/scripts'); -%>
-          <%- include('layouts/dropdown'); -%>
-            <%- include('layouts/submit-post'); -%>
+          <%- include('layouts/submit-post'); -%>
 
   </body>
 
