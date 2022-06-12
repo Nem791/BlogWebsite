@@ -36,7 +36,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   secret: "keyboard cat",
-  cookie: { maxAge: 8 * 60 * 60 * 1000 },
+  cookie: { maxAge: 5000000 },
   store: MongoStore.create({
     mongoUrl: db
   })

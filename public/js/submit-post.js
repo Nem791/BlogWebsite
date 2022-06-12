@@ -25,4 +25,7 @@ $("#sendMessageButton").click(function (e) {
 
     let data = $("#new-form").serializeArray();
     console.log(data);
+
+    var file = document.forms['new-form']['image'].files;
+    console.log(file);
 });

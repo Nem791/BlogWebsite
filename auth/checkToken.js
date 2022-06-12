@@ -6,6 +6,7 @@ module.exports = function (req, res, next) {
     // Lay token tu session 
     let token = sessData.auth_token;
     console.log('Token: ' + token);
+    console.log('sessData: ', sessData);
     // if (!token) return res.status(401).send('You do not have permission 4 this action');
 
     try {

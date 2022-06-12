@@ -2,6 +2,7 @@ const BlogPost = require("../models/BlogPost");
 const { default: mongoose } = require('mongoose');
 var path = require('path');
 const convertToSlug = require("../utils/convertSlug");
+const fileUploadAsync = require("../utils/fileUploadAsync");
 
 const getPosts = async (req, res) => {
     // const users = await BlogPost.find({}, (err, post) => {
@@ -75,7 +76,7 @@ const getPostById = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.json({error});
+        res.json({ error });
     }
 
 };
@@ -85,20 +86,43 @@ const newPost = (req, res) => {
     res.render('create', { username: username });
 };
 
-const savePost = (req, res) => {
+const savePost = async (req, res) => {
     // Luu DataTransferItemList, content, image to database 
     console.log('req.body-', req.body);
     console.log('req.user-', req.user);
     let image = req.files.image;
-    image.mv(path.join(__dirname, '..', '/public/upload/', image.name), function (error) {
-        BlogPost.create({
-            ...req.body,
-            image: '/upload/' + image.name,
-            user: mongoose.Types.ObjectId(req.user._id)
-        }, function (err) {
-            res.redirect('/');
-        })
-    });
+    let files = req.files;
+    for (const key in files) {
+        console.log('file');
+        console.log(files[key]);
+        req.body = { ...req.body, [key]: '/upload/' + files[key].name }
+        // files[key].mv(path.join(__dirname, '..', '/public/upload/', image.name), function (error) {
+        //     console.log("error: ", error);
+        // });
+        await fileUploadAsync(files[key]);
+
+    }
+
+    // if (Array.isArray(files)) {
+    //     try {
+    //         const data = await Promise.all(files.map((x) => fileUploadAsync(x)));
+    //         console.log("data: ", data);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // } else if (typeof files === 'object') {
+    //     return fileUploadAsync(files);
+    // }
+
+    console.log(req.body);
+
+    await BlogPost.create({
+        ...req.body,
+        user: mongoose.Types.ObjectId(req.user._id)
+    }, function (err) {
+        console.log(err);
+    })
+
 };
 
 const recommendArticle = (req, res) => {
