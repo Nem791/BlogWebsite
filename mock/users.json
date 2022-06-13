@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "623d7b0c873f8c77a85b2665"
+  },
+  "name": "3453453",
+  "email": "phuongnam131201.nnnpn@gmail.com",
+  "password": "$2a$10$7fK971.iiCWtXoDV8iSOOeSDIofW3j30rB4qnUYvTn1baQYyKVr6y",
+  "__v": 0,
+  "profilePicture": "https://construct-static.com/images/v1007/r/uploads/tutorial/0/images/17449/windows-8-user-account_v650.jpg"
+},{
+  "_id": {
+    "$oid": "623d7ce5784aafcb79e3d44b"
+  },
+  "name": "Nam791",
+  "email": "mintjake1311@gmail.com",
+  "password": "$2a$10$pCkbf7vIQX/Qr8IWsXhnG.6weVofWEoP35pC6.3JTZ3w45RVfoAFW",
+  "__v": 0,
+  "profilePicture": "https://construct-static.com/images/v1007/r/uploads/tutorial/0/images/17449/windows-8-user-account_v650.jpg"
+},{
+  "_id": {
+    "$oid": "626e3c1832d32523512fd8de"
+  },
+  "name": "Nam791",
+  "email": "ggg223@gmail.com",
+  "password": "$2a$10$0/AkFv1XDF94Jn05Yu0.Pu0t0VXm3aUvlaNzWWvW.tet2Ppsjn1Ji",
+  "__v": 0,
+  "profilePicture": "https://construct-static.com/images/v1007/r/uploads/tutorial/0/images/17449/windows-8-user-account_v650.jpg"
+},{
+  "_id": {
+    "$oid": "623d7ca9ace0084aa03c3733"
+  },
+  "profilePicture": "/upload/nem791-623d7ca9ace0084aa03c3733.jpg",
+  "name": "Nem791",
+  "email": "zeropark1234@gmail.com",
+  "password": "$2a$10$uifxovE5GMZquaX3nmMsE.QbbZlq1vK/o7lHNGyu0dlU7RyV17Flq",
+  "__v": 0
+}]

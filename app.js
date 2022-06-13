@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const MongoStore = require('connect-mongo');
 
-const db = 'mongodb://localhost:27017/blogdbp';
+const db = 'mongodb+srv://root:ktqd1234@cluster0.gdomz.mongodb.net/blogdbp?retryWrites=true&w=majority';
 const connection = mongoose.connect(db, {
   useNewUrlParser: true,
   useUnifiedTopology: true

@@ -1,0 +1,207 @@
+[{
+  "_id": {
+    "$oid": "62397f824a3b7522f02ad3fd"
+  },
+  "title": "Node.js Blog Tutorial",
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1647935352866"
+    }
+  },
+  "image": "/upload/Nodejs-Blog-Tutorial.png",
+  "__v": 0,
+  "content": "In this tutorial we are going to build a blog powered by Node.js on the back end, Bootstrap on the front end, and MongoDB as the data store. We are going to start from scratch and build out the project one step at a time. We’ll see how to include all the packages we’ll need into Node for building the blog.",
+  "excerpt": "Some of these include Express, Bcrypt, nodemon, express-edge, mongoose, body-parser, express-fileupload, and express-session. ",
+  "user": {
+    "$oid": "623d7ce5784aafcb79e3d44b"
+  },
+  "category": [
+    "Technology"
+  ]
+},{
+  "_id": {
+    "$oid": "6239809a4a3b7522f02ad404"
+  },
+  "title": "What does Express code look like?",
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1647935352866"
+    }
+  },
+  "image": "/upload/nodejs-express.png",
+  "__v": 0,
+  "content": "In a traditional data-driven website, a web application waits for HTTP requests from the web browser (or other client). When a request is received the application works out what action is needed based on the URL pattern and possibly associated information contained in POST data or GET data. Depending on what is required it may then read or write information from a database or perform other tasks required to satisfy the request. The application will then return a response to the web browser, often dynamically creating an HTML page for the browser to display by inserting the retrieved data into placeholders in an HTML template.",
+  "excerpt": "Express provides methods to specify what function is called for a particular HTTP verb (GET, POST, SET, etc.) and URL pattern (\"Route\"), and methods to specify what template (\"view\") engine is used.",
+  "user": {
+    "$oid": "626e3c1832d32523512fd8de"
+  },
+  "category": [
+    "Technology"
+  ]
+},{
+  "_id": {
+    "$oid": "623c4330761f3eaf3f10b1c6"
+  },
+  "title": "CSS Tricks",
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1648116460979"
+    }
+  },
+  "image": "/upload/t9Sx26n.png",
+  "__v": 0,
+  "content": "CSS Tricks is a blog that’s been active on Front End Development and building websites since 2007. Their army of writers publishes articles on tangible programming exercises and strategies, and the content is as diverse as the writers themselves. They have some for-sale books and merchandise confined to a sales part of the site, leaving articles unencumbered. While every author is different, the writing style and content is top-notch, well-organized, and features a plethora of applicable visuals and interactive code samples. Articles range in length but are generally thorough and technical. The subject matter can be simple but is commonly moderate to advanced with proportionately advanced explanations. I found they publish multiple posts per week.",
+  "excerpt": "CSS Tricks is a blog that’s been active on Front End Development and building websites since 2007",
+  "user": {
+    "$oid": "626e3c1832d32523512fd8de"
+  },
+  "category": [
+    "Technology",
+    "Other"
+  ]
+},{
+  "_id": {
+    "$oid": "626f82caf168a4a3a93a84d1"
+  },
+  "title": "Algolia",
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1651458090482"
+    }
+  },
+  "image": "/upload/c6VcZ2w.png",
+  "__v": 0,
+  "content": "Algolia is a search-as-a-service platform with a robust API for developers. The blog produces posts on engineering, eCommerce, and of course, Algolia product integrations. The content is useful for most programmers, despite expected company promotions, and both Algolia employees and users contribute. Articles are a combination of conceptual and technical, and the writing quality is well above average. Facts and claims are backed up with code snippets and useful links. The blog consistently publishes multiple original posts every month.",
+  "excerpt": "Algolia is a search-as-a-service platform with a robust API for developers.",
+  "user": {
+    "$oid": "623d7b0c873f8c77a85b2665"
+  },
+  "category": [
+    "Game",
+    "Technology"
+  ]
+},{
+  "_id": {
+    "$oid": "62713e554418bd63a711185b"
+  },
+  "title": "Intel Extreme Masters XVI Summer | Key Storylines",
+  "excerpt": "Most Interesting IEM XVI Summer Storylines",
+  "content": "Oh, what a match NiP vs. G2 was. The lower bracket final showcased both teams’ strengths and sheer fragging potential. We had the privilege of watching three exciting maps with the third one going all the way to the thirtieth round. In the end, Device and the boys managed to close things out in what was one heck of a fiery Dust 2 brawl, thus avenging the third-round loss earlier in the bracket. We’d be silly to think this loss is going to faze G2 going forward. Nope, that it surely won’t! NiKo and the boys are finally getting some steam going, and I reckon I’m not the only one noticing that. G2’s roster has a ton of fragging potential. If everyone is on level terms and in fine form, not a lot of teams can stop them!",
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1651588670827"
+    }
+  },
+  "image": "/upload/IEM-XVI-Summer-Teams.jpg",
+  "__v": 0,
+  "user": {
+    "$oid": "623d7b0c873f8c77a85b2665"
+  },
+  "category": [
+    "Game"
+  ]
+},{
+  "_id": {
+    "$oid": "62714175e1effbb7982c6ebc"
+  },
+  "title": "Vietnam Travel Blog",
+  "excerpt": "In this post we’ll look at places to go in Vietnam, itinerary ideas, where to stay and how to travel in Vietnam.",
+  "content": "Vietnam is one of our favourite countries, packed with history, stunning landscapes, cultural highlights, and amazing food. It’s one of the most exciting destinations in South East Asia. We visited back in 1999 for the first time ever and we go back regularly to create this Vietnam Travel Blog section for you. We’ve had the luxury of time and long visas to really get to know Vietnam. Our aim is to help you plan your trip to Vietnam using this travel guide.We hope you find our Vietnam tips and guides useful in planning your travel, vacation, or holiday in Vietnam. This guide is suitable for first-timers in Vietnam or return visitors looking for different parts of the country to explore.",
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1651589456917"
+    }
+  },
+  "image": "/upload/Vietnam-Travel-Blog-Guide-720x720.jpg",
+  "__v": 0,
+  "user": {
+    "$oid": "623d7ca9ace0084aa03c3733"
+  },
+  "category": [
+    "Travel"
+  ]
+},{
+  "_id": {
+    "$oid": "6274d3c9af087bb16f08ddc4"
+  },
+  "title": "BLAST Premier Fall Showdown 2020 Event Preview & Team Storylines",
+  "excerpt": "BLAST Premier Fall Showdown | Interesting Facts",
+  "content": "Let’s start with the talent. We finally got the talent announcement, following a week of anticipation. James Banks is going to be hosting the desk, as you’d come to expect. Maniac and Pimp will analyze the action for us, as always. Freya is the go-to interviewer, and the good old – Anders, Semmler, Iaunders, and Crawny – commentator duos will be there to spice things up for everyone watching the action live.\n\nBLAST Premier Fall Showdown 2020 action starts on Tuesday, Nov. 24, with the first batch of opening matches. It ends on Sunday, Nov. 29, meaning it will last for just six days. One last thing – there’s $150,000 in prize pool money, with the two bracket winners each getting $25,000, plus the tickets. We can’t forget about the tickets!",
+  "user": {
+    "$oid": "623d7ca9ace0084aa03c3733"
+  },
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1651822626897"
+    }
+  },
+  "image": "/upload/blast-premier-fall-showdown.jpg",
+  "__v": 0,
+  "category": [
+    "Game",
+    "Other"
+  ]
+},{
+  "_id": {
+    "$oid": "627bd0cbc5006d2954fb1496"
+  },
+  "title": "Knowledge, Technology and Complexity in Economic Growth",
+  "excerpt": "In economics, it is widely accepted that technology is the key driver of economic growth of countries, regions and cities. Technological progress allows for  the more efficient production of more and better goods and services, which is what prosperity depends on.",
+  "content": "The recent shift towards open innovation has resulted in increased flows of knowledge and new types of cooperation between education institutions, research organizations and business. Top corporate R&D investors worldwide lead the development of many emerging technologies. This is evident from an examination of the technology fields in which these companies intensified their inventive activities in the recent years and the contribution of top R&D investors to the overall development of these fields. Top corporate R&D investors accelerated their inventive activities in areas such as engines, automated driving systems, big data, artificial intelligence, 3-D printing and information and communication technologies.\n\nIt is necessary to remember that the two main ingredients for the development of new technology are codified knowledge in the form of theories, frameworks, scientific papers, patents, recipes, protocols, routines and instruction manuals and tacit knowledge or knowhow, which is acquired through learning by doing in a long process of imitation and repetition and which exists only in brains. The development of science, technology, innovation and production require both codified and tacit knowledge but the codifiable component of science and technology get registered, respectively, in the form of scientific publications and patents, and these are grouped into categories. Scientific publications, patents, industries, occupations and products are proxies of scientific knowledge, technological development, economic activity and human skills.",
+  "user": {
+    "$oid": "623d7ca9ace0084aa03c3733"
+  },
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1652278341849"
+    }
+  },
+  "image": "/upload/picture1_01.png",
+  "__v": 0,
+  "category": [
+    "Technology",
+    "Economy"
+  ]
+},{
+  "_id": {
+    "$oid": "62a5a762309b051b0c072047"
+  },
+  "title": "Post New",
+  "excerpt": "And Why It Matters for Policymakers",
+  "content": "Technology is something to resist. Whether it foments antisocial behavior, cultural polarization, or wide-scale labor disruptions, technological change is a frustrating and perennial struggle facing society. The benefits largely accrue to a few oligarchs. More existentially, digital technologies rob us of our humanity, as automation and machine learning become a dangerous master we must serve.\n\nAt least, that’s the woeful impression you may get from some critics. Given this bleak view of affairs, it’s a wonder that anyone tolerates modern technology at all. Why allow such traumatic social shifts if nothing worthwhile comes of it?\n\nIt is true that antipathy to technological change animates many proposals for limitations or outright bans on certain applications of technology. Yet apart from a few odd countries, no governments prohibit technological innovation altogether. Why?",
+  "user": {
+    "$oid": "623d7ca9ace0084aa03c3733"
+  },
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1655023401225"
+    }
+  },
+  "image": "/upload/alex-kotliarskyi-361081-unsplash.jpg",
+  "category": [
+    "Technology",
+    "Economy"
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62a6bcc95f208fe2490723e2"
+  },
+  "title": "What is JSON Web Token",
+  "excerpt": "A JSON Web Token (JWT) is a JSON object that is defined in RFC 7519 as a safe way of transmitting information between two parties.",
+  "content": "JWT, or JSON Web Token, is an open standard used to share information between two parties securely — a client and a server. In most cases, it’s an encoded JSON containing a set of claims and a signature. It’s usually used in the context of other authentication mechanisms like OAuth, OpenID to share user-related information. It’s also a popular way to authenticate/authorize users in a microservice architecture.\n\n JWT authentication is a token-based stateless authentication mechanism. It is popularly used as a client-side-based stateless session, this means the server doesn’t have to completely rely on a data store (or) database to save session information.\n\nJWTs can be encrypted, but they are typically encoded & signed.  We will be focusing on Signed JWTs. The purpose of Signed JWT is not to hide the data but to ensure the authenticity of the data. And that is why it’s highly recommended to use HTTPS with Signed JWTs.",
+  "user": {
+    "$oid": "623d7ca9ace0084aa03c3733"
+  },
+  "datePosted": {
+    "$date": {
+      "$numberLong": "1655093956421"
+    }
+  },
+  "image": "/upload/jwt.png",
+  "category": [
+    "Technology",
+    "Other"
+  ],
+  "__v": 0
+}]
