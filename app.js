@@ -7,6 +7,9 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const MongoStore = require('connect-mongo');
+const cors = require("cors");
+const dotenv = require('dotenv');
+dotenv.config();
 
 const db = 'mongodb+srv://root:ktqd1234@cluster0.gdomz.mongodb.net/blogdbp?retryWrites=true&w=majority';
 const connection = mongoose.connect(db, {
@@ -21,6 +24,8 @@ var authRouter = require('./routes/auth');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
