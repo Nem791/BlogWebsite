@@ -1,8 +1,9 @@
-const BlogPost = require("../models/BlogPost");
 const { default: mongoose } = require('mongoose');
 var path = require('path');
-const toSlug = require("../utils/vietnamese-slug-converter");
+
+const BlogPost = require("../models/BlogPost");
 const fileUploadAsync = require("../utils/fileUploadAsync");
+const { toSlug } = require('../utils/vietnamese-slug-converter');
 const getPosts = async (req, res) => {
     // const users = await BlogPost.find({}, (err, post) => {
     //     if (err) res.sendStatus(500);
