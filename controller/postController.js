@@ -20,7 +20,7 @@ const getPosts = async (req, res) => {
 
     let username = (req.user !== undefined) ? req.user : undefined;
 
-    const pageSize = 6;
+    const pageSize = 6; 
     const page = Number(req.params.pageNumber) || 1;
 
     // Ko co params => mac dinh se sort theo title 
