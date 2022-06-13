@@ -21,7 +21,12 @@
 
       <main class="blog-container">
         <header class="header">
-          <p class="subheading">Subheading for the Page</p>
+          <div style="display: flex">
+            <% for(var i = 0; i < post.category.length; i++) {%>
+              <p style="padding: 20px;" class="subheading"><%= post.category[i] %></p>
+            <% } %>
+          </div>
+
           <%- include('layouts/author-info-card'); -%>
           <h1 class="heading"><%= post.title %></h1>
         </header>
@@ -35,7 +40,8 @@
           </p>
           <p><%= post.content %>
           </p>
-          <p>Velit scelerisque in dictum non consectetur. Potenti nullam ac tortor vitae purus faucibus ornare
+          <p>
+            <!-- Velit scelerisque in dictum non consectetur. Potenti nullam ac tortor vitae purus faucibus ornare
             suspendisse sed. Interdum velit euismod in pellentesque massa. Amet porttitor eget dolor morbi non.
             Pellentesque diam volutpat commodo sed egestas egestas. Massa sapien faucibus et molestie ac. Rhoncus aenean
             vel elit scelerisque mauris. In est ante in nibh mauris cursus mattis molestie a. At imperdiet dui accumsan
@@ -43,38 +49,31 @@
             sed turpis tincidunt. Maecenas volutpat blandit aliquam etiam. Orci phasellus egestas tellus rutrum tellus
             pellentesque. Id ornare arcu odio ut sem nulla pharetra diam sit. Faucibus pulvinar elementum integer enim.
             At risus viverra adipiscing at in tellus. Eget mauris pharetra et ultrices. Nulla posuere sollicitudin
-            aliquam ultrices sagittis orci a.
-
-            Diam quam nulla porttitor massa id neque aliquam. Pharetra convallis posuere morbi leo urna molestie.
-            Venenatis cras sed felis eget velit aliquet. In nulla posuere sollicitudin aliquam ultrices sagittis. Eget
-            nulla facilisi etiam dignissim diam. Commodo sed egestas egestas fringilla phasellus. Etiam erat velit
-            scelerisque in dictum non consectetur a erat. Pretium aenean pharetra magna ac. Mattis nunc sed blandit
-            libero. Quam id leo in vitae turpis massa sed elementum. Sem viverra aliquet eget sit amet. Neque aliquam
-            vestibulum morbi blandit cursus risus at ultrices mi. Felis donec et odio pellentesque diam. Convallis
-            posuere morbi leo urna molestie at elementum eu. Tincidunt ornare massa eget egestas purus viverra. Id
-            faucibus nisl tincidunt eget. Quisque id diam vel quam elementum pulvinar. Aliquam purus sit amet luctus
-            venenatis lectus magna. Diam donec adipiscing tristique risus.</p>
+            aliquam ultrices sagittis orci a. -->
+            <b>Which Blog Post Will You Write Next?</b>
+            <br/>
+            Your blog post’s introduction plays an important role in whether or not your readers will stick around, so make sure you spend time perfecting it.
+            <br/>
+            <br/>
+            Remember to keep it short and sweet, stimulate your reader’s curiosity, and demonstrate what they’ll gain from reading your article.
+            <br/>
+            <br/>
+            Now, get out there, and write your next captivating introduction. Good luck!
+            </p>
         </section>
         <aside class="aside">
           <h4 class="heading">Other Articles you might Enjoy</h4>
-          <div class="card">
-            <img
-              src='https://images.unsplash.com/photo-1457269315919-3cfc794943cd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=2c42c1cac3092204f4c1afdca4d44e99'
-              alt=''>
-            <div>
-              <p class="heading title">The big subtext</p>
-              <p class="author">Mathews</p>
+          <% for(var i=0; i < recommendedPosts.length; i++) { %>
+            <div id="<%= recommendedPosts[i]._id %>" class="card">
+              <img
+                src='<%= recommendedPosts[i].image %>'
+                alt=''>
+              <div>
+                <p class="heading title card-title"><%= recommendedPosts[i].title %></p>
+                <p class="author"><%= recommendedPosts[i].user.name %></p>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img
-              src='https://images.unsplash.com/photo-1528640936814-4460bc015292?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=66812b5fda04c80ff762c8a920f562f3'
-              alt=''>
-            <div>
-              <p class="heading title">The bug subtext</p>
-              <p class="author">Harsha</p>
-            </div>
-          </div>
+         <% } %>
         </aside>
         <footer class="footer">
           <a href="https://twitter.com/agneymenon" target="_blank" class="name-link">Boy with Silver Wings</a>

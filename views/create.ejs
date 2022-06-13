@@ -26,6 +26,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <!-- for browser to know tha tthe form contains mutli media. will encripy multie media and send to server -->
+            <span id="error" hidden><%= errorText %></span>
             <form name="new-form" id="new-form" action="/posts/store" method="POST" enctype="multipart/form-data">
               <!-- Title -->
               <div class="control-group">
@@ -93,15 +94,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Image</label>
-                  <input multiple type="file" class="form-control" id="image" name="image">
-                </div>
-                <span hidden class="err-message">Select image for post</span>
-              </div>
-              <!-- Image -->
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls">
-                  <label>Image</label>
-                  <input type="file" class="form-control" id="image1" name="image1">
+                  <input type="file" class="form-control" id="image" name="image" accept="image/*">
                 </div>
                 <span hidden class="err-message">Select image for post</span>
               </div>
@@ -112,12 +105,13 @@
             </form>
           </div>
         </div>
-      </div>
+      </div> 
 
       <hr>
       <%- include('layouts/footer'); -%>
         <%- include('layouts/scripts'); -%>
           <%- include('layouts/submit-post'); -%>
+          <%- include('layouts/login-script'); -%>
 
   </body>
 

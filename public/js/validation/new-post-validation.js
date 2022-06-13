@@ -19,7 +19,7 @@ const validateForm = (arrayInput) => {
             check = false;
         }
 
-        
+
     }
 
     // Kiem tra ng dung da chon image hay chua
@@ -27,7 +27,7 @@ const validateForm = (arrayInput) => {
         errMessages[errMessages.length - 1].hidden = false;
         check = false;
     }
-    
+
     inputImage.addEventListener('change', () => {
         errMessages[errMessages.length - 1].hidden = true;
     })

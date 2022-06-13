@@ -27,10 +27,6 @@ const BlogPostSchema = new Schema({
         type: String,
         required: true
     },
-    image1: {
-        type: String,
-        required: true
-    },
     category: {
         type: Array,
         required: true

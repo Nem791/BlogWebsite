@@ -25,3 +25,5 @@ function toSlug(str) {
     // return
     return str;
 }
+
+module.exports = {toSlug};

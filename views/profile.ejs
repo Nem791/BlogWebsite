@@ -35,15 +35,15 @@
                                         <%= user.name %>
                                     </div>
                                     <div class="profile-usertitle-job">
-                                        Developer
+                                        Blogger
                                     </div>
                                 </div>
                                 <!-- END SIDEBAR USER TITLE -->
                                 <!-- SIDEBAR BUTTONS -->
-                                <div class="profile-userbuttons">
+                                <!-- <div class="profile-userbuttons">
                                     <button type="button" class="btn btn-success btn-sm">Follow</button>
                                     <button type="button" class="btn btn-danger btn-sm">Message</button>
-                                </div>
+                                </div> -->
                                 <!-- END SIDEBAR BUTTONS -->
                                 <!-- SIDEBAR MENU -->
                                 <div class="profile-usermenu sidebar-sticky">
@@ -59,7 +59,7 @@
                                                 <i class="fa fa-user"></i>
                                                 Account Settings </a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" href="#" target="_blank">
                                                 <i class="fa fa-check"></i>
                                                 Tasks </a>
@@ -68,7 +68,7 @@
                                             <a class="nav-link" href="#">
                                                 <i class="fa fa-flag"></i>
                                                 Help </a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                                 <!-- END MENU -->
@@ -77,34 +77,34 @@
                                     <!-- STAT -->
                                     <div class="row list-separated profile-stat">
                                         <div class="col-md-4 col-sm-4 col-xs-6">
-                                            <div class="uppercase profile-stat-title"> 37 </div>
-                                            <div class="uppercase profile-stat-text"> Projects </div>
+                                            <div class="uppercase profile-stat-title"> <%= numberOfPosts %> </div>
+                                            <div class="uppercase profile-stat-text"> Blogs </div>
                                         </div>
-                                        <div class="col-md-4 col-sm-4 col-xs-6">
+                                        <!-- <div class="col-md-4 col-sm-4 col-xs-6">
                                             <div class="uppercase profile-stat-title"> 51 </div>
                                             <div class="uppercase profile-stat-text"> Tasks </div>
-                                        </div>
+                                        </div> -->
                                         <div class="col-md-4 col-sm-4 col-xs-6">
-                                            <div class="uppercase profile-stat-title"> 61 </div>
+                                            <div class="uppercase profile-stat-title"> <%= numberOfPosts %> </div>
                                             <div class="uppercase profile-stat-text"> Uploads </div>
                                         </div>
                                     </div>
                                     <!-- END STAT -->
                                     <div>
-                                        <h4 class="profile-desc-title">About Jason Davis</h4>
+                                        <h4 class="profile-desc-title">About Blogger</h4>
                                         <span class="profile-desc-text"> Lorem ipsum dolor sit amet diam nonummy nibh
                                             dolore. </span>
                                         <div class="margin-top-20 profile-desc-link">
                                             <i class="fa-brands fa-facebook"></i>
-                                            <a href="https://www.apollowebstudio.com">apollowebstudio.com</a>
+                                            <a href="https://www.facebook.com/">Facebook</a>
                                         </div>
                                         <div class="margin-top-20 profile-desc-link">
                                             <i class="fa-brands fa-instagram-square"></i>
-                                            <a href="https://www.twitter.com/jasondavisfl/">@jasondavisfl</a>
+                                            <a href="https://www.instagram.com/">Instagram</a>
                                         </div>
                                         <div class="margin-top-20 profile-desc-link">
                                             <i class="fa-solid fa-envelope"></i>
-                                            <a href="https://www.facebook.com/">JasonDavisFL</a>
+                                            <a href="http://gmail.com/">Email</a>
                                         </div>
                                     </div>
                                 </div>
@@ -119,16 +119,15 @@
                                 <div class="container">
                                     <div class="row" id="main">
                                         <div class="col-md-12">
-                                            <form role="form">
+                                            <form action="/users/update" method="post" role="form" enctype="multipart/form-data">
                                                 <h2>Edit your profile.<small>It's always easy</small></h2>
                                                 <hr class="colorgraph">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-6 col-md-6">
                                                         <div class="form-group">
-                                                            <input type="text" value="<%= user.name %>"
-                                                                name="first_name" id="first_name"
-                                                                class="form-control input-lg" placeholder="First Name"
-                                                                tabindex="1">
+                                                            <input type="text" value="<%= user.name %>" name="name"
+                                                                id="name" class="form-control input-lg"
+                                                                placeholder="First Name" tabindex="1">
                                                         </div>
                                                     </div>
                                                     <!-- <div class="col-xs-12 col-sm-8 col-md-4">
@@ -145,7 +144,7 @@
                                                         placeholder="Email Address" tabindex="4">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="file" value="/upload/0d5ad33977deb880e1cf.jpg"
+                                                    <input type="file" accept="image/*"
                                                         name="image" id="image" class="form-control input-lg"
                                                         placeholder="Image" tabindex="4">
                                                 </div>
@@ -168,8 +167,10 @@
                                                 <hr class="colorgraph">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-md-6"></div>
-                                                    <div class="col-xs-12 col-md-6"><a href="#"
-                                                            class="btn btn-success btn-block btn-lg">Save</a></div>
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <!-- <a href="#" class="btn btn-success btn-block btn-lg">Save</a> -->
+                                                        <input class="btn btn-success btn-block btn-lg" type="submit" value="Save">
+                                                    </div>
                                                 </div>
                                             </form>
                                             <!-- 	</div>
